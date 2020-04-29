@@ -25,11 +25,11 @@
 			<nav class="navbar navbar-expand-lg -bg-secondary">
 			  <div class="collapse navbar-collapse container _container" id="navbarSupportedContent">
 			    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item ">
+			        <a class="nav-link" href="<c:url value="/" />">Início</a>
+			      </li>
 			      <li class="nav-item active">
-			     <a class="nav-link" href="<c:url value="/" />">Início</a>
-			        </li>
-			      <li class="nav-item">
-			         <a class="nav-link" href="<c:url value="/game/new" />">Adicionar Jogo</a>
+			        <a class="nav-link" href="<c:url value="/game/new" />">Adicionar Jogo</a>
 			      </li>
 			      <li class="nav-item">
 			        <a class="nav-link disabled" href="#">Amigos</a>
@@ -50,7 +50,7 @@
 			</nav>
 		</header>
 		<main class="container games-container _container">
-		<h2 class="content-title">Games</h2>
+		<h2 class="content-title">Adicionar Game</h2>
 		</main>
 	</body>
 </html>

@@ -1,0 +1,95 @@
+.-bg-primary-color{
+    background-color: #0f1215;
+}
+
+.-bg-secondary{
+	background-color:#24252e;
+}
+
+.games-container{
+	padding-top: 2em;
+	color: #fff;
+}
+
+.content-title{
+	text-transform: uppercase;
+}
+
+img{
+	max-width: 100%;
+}
+
+.navbar img{
+	max-height: 50px;
+}
+
+.navbar img.rounded-circle{
+	background-color:#d24f28;
+}
+
+.link{ 
+	cursor:pointer;
+}
+
+.link.disabled{
+	cursor: default;
+}
+
+.user-area i{
+	color: #fff;
+	font-size:1rem;
+	padding-right:1rem;
+}
+
+.user-area i.disabled{
+	color: #6c757d;
+}
+	
+.-bg-card{
+	background-color: #1a1c25;
+}
+
+.title-container, .title-container .application-title{
+	margin: 0 auto;
+}
+header > .row > img{
+	width: 26px;
+    margin-left: 1.4em;
+}
+
+.title-container .application-title{
+	padding-bottom:.5em;	
+	padding-top:.5em;	
+    text-transform: uppercase; 
+}
+
+.application-title{
+	color: #83848b;
+	font-size: .75em;
+	display: block;
+}
+
+nav.navbar{
+	padding:0;
+}
+
+nav.navbar a{
+    color: #eaeaeb;	
+    text-transform: uppercase; 
+}
+
+nav.navbar ul li.nav-item{
+    margin-right: 1.5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+nav.navbar ul li.nav-item.active{
+	border-bottom: 3px solid firebrick;
+}
+
+@media (min-width: 1200px){
+    ._container{
+        max-width: 1440px;
+    }
+}

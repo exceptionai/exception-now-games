@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ExceptionNowController {
 
-	@GetMapping()
+	@GetMapping("/")
 	 public String home(Model model) {
-		return "redirect:game";
+		return "redirect:game";   
 	}
+	
+	
 }

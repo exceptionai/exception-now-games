@@ -9,8 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("game")
 public class GameController {
 	 
-	@GetMapping()
+	@GetMapping
 	 public String home(Model model) {
 		return "index";
+	}
+	
+	@GetMapping("new")
+	 public String formAdd(Model model) {
+		return "newGame";
 	}
 }
