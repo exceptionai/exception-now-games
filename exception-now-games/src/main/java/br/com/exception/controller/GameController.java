@@ -12,14 +12,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.exception.model.GameModel;
 import br.com.exception.repository.GameRepository;
 
-import br.com.exception.repository.GameRepository;
-
 @Controller
 @RequestMapping("game")
 public class GameController {
 	
-	GameRepository repository = GameRepository.getInstance();
-	 
 	GameRepository repository = GameRepository.getInstance();
 
 	@GetMapping
