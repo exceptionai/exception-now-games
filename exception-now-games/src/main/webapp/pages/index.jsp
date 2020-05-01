@@ -51,6 +51,10 @@
 		</header>
 		<main class="container games-container _container">
 		<h2 class="content-title">Games</h2>
+		
+		<c:if test="${not empty message}">
+			<h3 class="alert alert-success">${message}</h3>
+		</c:if>
 		</main>
 	</body>
 </html>
