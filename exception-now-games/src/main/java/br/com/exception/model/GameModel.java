@@ -1,16 +1,16 @@
 package br.com.exception.model;
 
 public class GameModel {
-	private int id;
+	private Integer id;
 	private String name;
 	private String description;
 	private String genre;
 	private String developer;
 	private String publisher;
-	private double price;
-
-	public GameModel(int id, String name, String description, String genre, String developer, String publisher,
-			double price) {
+	private Double price;
+	
+	public GameModel(Integer id, String name, String description, String genre, String developer, String publisher,
+			Double price) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -21,11 +21,11 @@ public class GameModel {
 		this.price = price;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -69,11 +69,13 @@ public class GameModel {
 		this.publisher = publisher;
 	}
 
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
+
+	
 }

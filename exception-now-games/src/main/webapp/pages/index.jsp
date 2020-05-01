@@ -33,7 +33,7 @@
 				id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
-						href="<c:url value="/" />">Início</a></li>
+						href="<c:url value="/" />">InÃ­cio</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="<c:url value="/game/new" />">Adicionar Jogo</a></li>
 					<li class="nav-item"><a class="nav-link disabled" href="#">Amigos</a>
@@ -55,8 +55,12 @@
 	</header>
 	<main class="container games-container _container">
 		<h2 class="content-title">Games</h2>
-
-		<div class="container games_list">
+		
+		<c:if test="${not empty message}">
+			<h3 class="alert alert-success">${message}</h3>
+		</c:if>
+    
+    <div class="container games_list">
 			<c:forEach items="${games}" var="game">
 				<div class="card games-card">
 					<img class="card-img-top"
@@ -71,6 +75,7 @@
 				</div>
 			</c:forEach>
 		</div>
-	</main>
-</body>
+    
+		</main>
+	</body>
 </html>
