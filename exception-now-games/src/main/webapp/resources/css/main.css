@@ -87,6 +87,28 @@ nav.navbar ul li.nav-item{
 nav.navbar ul li.nav-item.active{
 	border-bottom: 3px solid firebrick;
 }
+/* Cards */
+.games_list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card {
+	width: 18rem;
+	color: white;
+	margin: 12px 24px 24px;
+	background-color: transparent;
+	text-align: justify;	
+	border: 1px solid firebrick;
+}
+
+.card-title {
+	font-size: 24px;
+}
+
+.card-subtitle {
+	font-size: 12px;
+}
 
 @media (min-width: 1200px){
     ._container{
