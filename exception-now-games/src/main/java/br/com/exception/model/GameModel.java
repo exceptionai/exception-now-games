@@ -8,9 +8,10 @@ public class GameModel {
 	private String developer;
 	private String publisher;
 	private Double price;
+	private String imageUrl;
 	
 	public GameModel(Integer id, String name, String description, String genre, String developer, String publisher,
-			Double price) {
+			Double price, String imageUrl) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -19,6 +20,7 @@ public class GameModel {
 		this.developer = developer;
 		this.publisher = publisher;
 		this.price = price;
+		this.imageUrl = imageUrl;
 	}
 
 	public Integer getId() {
@@ -77,5 +79,11 @@ public class GameModel {
 		this.price = price;
 	}
 
-	
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 }

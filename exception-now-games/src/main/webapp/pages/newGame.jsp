@@ -83,7 +83,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label for="genre">Gênero: </label>
+				<label for="genre">Gênero(s): </label>
 				<form:input type="text" path="genre" name="genre" id="genre" class="form-control" />
 				<font color="red">
 					<form:errors path="genre" />
@@ -111,6 +111,14 @@
 				<form:input type="number" path="price" name="price" id="price" class="form-control" />
 				<font color="red">
 					<form:errors path="price" />
+				</font><br/>
+			</div>
+			
+			<div class="form-group">
+				<label for="imageUrl">URL da imagem do jogo: </label>
+				<form:input type="text" path="imageUrl" name="imageUrl" id="imageUrl" class="form-control" />
+				<font color="red">
+					<form:errors path="imageUrl" />
 				</font><br/>
 			</div>
 			
