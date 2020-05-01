@@ -56,9 +56,21 @@
 	<main class="container games-container _container">
 		<h2 class="content-title">Games</h2>
 
-		<c:forEach items="${games}" var="game">
-			<h3>${game.name}</h3>
-		</c:forEach>
+		<div class="container games_list">
+			<c:forEach items="${games}" var="game">
+				<div class="card games-card">
+					<img class="card-img-top"
+						src="https://steamcdn-a.akamaihd.net/steam/apps/268910/header.jpg?t=1572039891"
+						alt="Card image cap">
+					<div class="card-body">
+						<h3 class="card-title">${game.name}</h3>
+						<h4 class="card-subtitle mb-2 text-muted">${game.genre}</h4>
+						<a href="#" class="card-link">Detalhes</a> <a href="#"
+							class="card-link">Editar</a> <a href="#" class="card-link">Remover</a>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
 	</main>
 </body>
 </html>
