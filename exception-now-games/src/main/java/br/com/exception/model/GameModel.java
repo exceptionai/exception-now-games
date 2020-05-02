@@ -7,10 +7,11 @@ public class GameModel {
 	private String genre;
 	private String developer;
 	private String publisher;
+	private String image;
 	private double price;
 
 	public GameModel(int id, String name, String description, String genre, String developer, String publisher,
-			double price) {
+			double price, String image) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -19,6 +20,7 @@ public class GameModel {
 		this.developer = developer;
 		this.publisher = publisher;
 		this.price = price;
+		this.image = image;
 	}
 
 	public int getId() {
@@ -75,5 +77,13 @@ public class GameModel {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 }

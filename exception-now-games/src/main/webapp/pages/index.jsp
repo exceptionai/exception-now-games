@@ -13,6 +13,12 @@
 	crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/98b78c6895.js"
 	crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+	<script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.5.0.min.js"
+  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  crossorigin="anonymous"></script>
 
 <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/autoreload.js" />"></script>
@@ -21,7 +27,7 @@
 <body class="-bg-primary-color">
 	<header>
 
-		<div class="row   -bg-card">
+		<div class="row mx-0 -bg-card">
 			<img src="<c:url value="/resources/img/logo.png" />"
 				alt="logo exception">
 			<div class="_container title-container">
@@ -29,6 +35,8 @@
 			</div>
 		</div>
 		<nav class="navbar navbar-expand-lg -bg-secondary">
+			 
+						   
 			<div class="collapse navbar-collapse container _container"
 				id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
@@ -40,15 +48,26 @@
 					</li>
 					<li class="nav-item"><a class="nav-link disabled" href="#">Meus
 							Jogos</a></li>
-				</ul>
-				<div class="user-area">
-					<i class="fas fa-heart disabled link"></i> <i
-						class="fas fa-shopping-cart disabled link"></i> <i
-						class="fas fa-comment-alt disabled link"></i> <span
-						class="text-light pr-2">Usuario_Spring</span/> <img
+				</ul> 
+				<ul class="user-area navbar-nav d-flex align-items-center">
+					<li class="">
+						<i class="fas fa-heart disabled link"></i>
+					</li>
+					<li>
+						<i class="fas fa-shopping-cart disabled link"></i>
+					</li>
+					<li>
+						<i class="fas fa-comment-alt disabled link"></i>
+					</li>
+					<li>
+						<span 
+						class="text-light pr-2">Usuario_Spring</span/>
+						<img
 						src="https://image.flaticon.com/icons/svg/2317/2317963.svg"
 						class=rounded-circle alt="Cinque Terre">
-				</div>
+					</li>
+					    
+				</ul>
 
 			</div>
 		</nav>
@@ -56,13 +75,13 @@
 	<main class="container games-container _container">
 		<h2 class="content-title">Games</h2>
 
-		<div class="container games_list">
+		<div class="games_list grid" >
 			<c:forEach items="${games}" var="game">
-				<div class="card games-card">
+				<div class="card games-card grid-item">
 					<img class="card-img-top"
-						src="https://steamcdn-a.akamaihd.net/steam/apps/268910/header.jpg?t=1572039891"
+						src="${game.image}"
 						alt="Card image cap">
-					<div class="card-body">
+					<div class="card-body ">
 						<h3 class="card-title">${game.name}</h3>
 						<h4 class="card-subtitle mb-2 text-muted">${game.genre}</h4>
 						<a href="#" class="card-link">Detalhes</a> <a href="#"
@@ -72,5 +91,6 @@
 			</c:forEach>
 		</div>
 	</main>
+	<script src="<c:url value="/resources/js/main.js" />"></script>
 </body>
 </html>
