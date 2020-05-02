@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.exception.model.GameModel;
-import br.com.exception.repository.GameRepository;
 import br.com.exception.service.GameService;
 
 @Controller

@@ -1,24 +1,17 @@
 package br.com.exception.repository;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
+import org.springframework.stereotype.Repository;
 
 import br.com.exception.model.GameModel;
 
+@Repository
 public class GameRepository {
 
-	private static GameRepository instance;
 	private static Map<Integer, GameModel> games;
-
-	public static GameRepository getInstance() {
-		if (instance == null) {
-			return new GameRepository();
-		}
-		return instance;
-	}
 
 	private GameRepository() {
 		games = new HashMap<Integer, GameModel>();

@@ -5,15 +5,17 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.exception.model.GameModel;
 import br.com.exception.repository.GameRepository;
 
-@Component
+@Service
 public class GameService {
 
-	GameRepository repository = GameRepository.getInstance();
+	@Autowired
+	GameRepository repository;
 
 	public GameModel getById(Integer id){
 		return repository.retrieveOneById(id);
