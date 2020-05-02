@@ -17,6 +17,8 @@
 <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/autoreload.js" />"></script>
 <title>Exception Now Games</title>
+
+<c:set value="${pageContext.request.contextPath}" var="contextPath" />
 </head>
 <body class="-bg-primary-color">
 	<header>
@@ -35,7 +37,8 @@
 					<li class="nav-item active"><a class="nav-link"
 						href="<c:url value="/" />">Início</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="<c:url value="/game/new" />">Adicionar Jogo</a></li>
+						href="<c:url value="/game/form?page=newGame" />">Adicionar
+							Jogo</a></li>
 					<li class="nav-item"><a class="nav-link disabled" href="#">Amigos</a>
 					</li>
 					<li class="nav-item"><a class="nav-link disabled" href="#">Meus
@@ -55,27 +58,27 @@
 	</header>
 	<main class="container games-container _container">
 		<h2 class="content-title">Games</h2>
-		
+
 		<c:if test="${not empty message}">
 			<h3 class="alert alert-success">${message}</h3>
 		</c:if>
-    
-    <div class="container games_list">
+
+		<div class="container games_list">
 			<c:forEach items="${games}" var="game">
 				<div class="card games-card">
-					<img class="card-img-top"
-						src="${game.imageUrl}"
+					<img class="card-img-top" src="${game.imageUrl}"
 						alt="Card image cap">
 					<div class="card-body">
 						<h3 class="card-title">${game.name}</h3>
 						<h4 class="card-subtitle mb-2 text-muted">${game.genre}</h4>
-						<a href="#" class="card-link">Detalhes</a> <a href="#"
-							class="card-link">Editar</a> <a href="#" class="card-link">Remover</a>
+						<a href="#" class="card-link">Detalhes</a> <a
+							href="${contextPath}/game/form?page=editGame&id=${game.id}" class="card-link">Editar</a>
+						<a href="#" class="card-link">Remover</a>
 					</div>
 				</div>
 			</c:forEach>
 		</div>
-    
-		</main>
-	</body>
+
+	</main>
+</body>
 </html>
