@@ -1,5 +1,7 @@
 package br.com.exception.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -31,7 +33,7 @@ public class GameController {
 	}
 	
 	@PostMapping("new")
-	 public String saveNew(GameModel gameModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+	 public String saveNew(@Valid GameModel gameModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 		
 		if (bindingResult.hasErrors())
 			return "newGame";

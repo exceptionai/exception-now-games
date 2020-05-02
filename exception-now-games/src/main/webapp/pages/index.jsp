@@ -33,7 +33,7 @@
 				id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
-						href="<c:url value="/" />">InÃ­cio</a></li>
+						href="<c:url value="/" />">Início</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="<c:url value="/game/new" />">Adicionar Jogo</a></li>
 					<li class="nav-item"><a class="nav-link disabled" href="#">Amigos</a>
@@ -64,7 +64,7 @@
 			<c:forEach items="${games}" var="game">
 				<div class="card games-card">
 					<img class="card-img-top"
-						src="https://steamcdn-a.akamaihd.net/steam/apps/268910/header.jpg?t=1572039891"
+						src="${game.imageUrl}"
 						alt="Card image cap">
 					<div class="card-body">
 						<h3 class="card-title">${game.name}</h3>

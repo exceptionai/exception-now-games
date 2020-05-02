@@ -62,6 +62,7 @@
 		
 			<spring:hasBindErrors name="gameModel">
 				<div class="alert alert-danger" role="alert">
+					<b class="has-error">Por favor, corrija o(s) seguinte(s) erro(s) para continuar:</b><br>
 					<form:errors path="*" class="has-error" />
 				</div>
 			</spring:hasBindErrors>
@@ -83,7 +84,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label for="genre">Gênero: </label>
+				<label for="genre">Gênero(s): </label>
 				<form:input type="text" path="genre" name="genre" id="genre" class="form-control" />
 				<font color="red">
 					<form:errors path="genre" />
@@ -108,9 +109,17 @@
 			
 			<div class="form-group">
 				<label for="price">Preço: </label>
-				<form:input type="number" path="price" name="price" id="price" class="form-control" />
+				<form:input type="number" step="0.01" pattern="[0-9]+([\.,][0-9]+)?" path="price" name="price" id="price" class="form-control" />
 				<font color="red">
 					<form:errors path="price" />
+				</font><br/>
+			</div>
+			
+			<div class="form-group">
+				<label for="imageUrl">URL da imagem do jogo: </label>
+				<form:input type="text" path="imageUrl" name="imageUrl" id="imageUrl" class="form-control" />
+				<font color="red">
+					<form:errors path="imageUrl" />
 				</font><br/>
 			</div>
 			
