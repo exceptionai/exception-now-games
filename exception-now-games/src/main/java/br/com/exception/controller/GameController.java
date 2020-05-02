@@ -2,6 +2,7 @@ package br.com.exception.controller;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,17 +18,19 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.exception.model.GameModel;
 import br.com.exception.model.MessageModel;
 import br.com.exception.model.MessageType;
-import br.com.exception.repository.GameRepository;
+import br.com.exception.service.GameService;
 
 @Controller
 @RequestMapping("game")
 public class GameController {
 	
-	GameRepository repository = GameRepository.getInstance();
+	@Autowired
+	GameService service;
 
 	@GetMapping
 	 public String home(Model model) {
-		model.addAttribute("games", repository.retrieveAllGames());
+		model.addAttribute("games", service.getAll());
+		
 		return "index";
 	}
 	
@@ -38,7 +41,7 @@ public class GameController {
 			 			Model model) {
 		
 		if ("editGame".equals(page)) {
-			model.addAttribute("gameModel", repository.retrieveOneById(id));
+			model.addAttribute("gameModel", service.getById(id));
 		}
 		
 		return page;
@@ -50,7 +53,7 @@ public class GameController {
 		if (bindingResult.hasErrors())
 			return "newGame";
 		
-		repository.create(gameModel);
+		service.create(gameModel);
 		
 		MessageModel message = new MessageModel("Sucesso",gameModel.getName() + " cadastrado com sucesso!", MessageType.success);
 		redirectAttributes.addFlashAttribute("message", message);
@@ -64,7 +67,7 @@ public class GameController {
 		if (bindingResult.hasErrors())
 			return "editGame";
 		
-		repository.update(gameModel);
+		service.update(gameModel);
 		
 		MessageModel message = new MessageModel("Sucesso",gameModel.getName() + " editado com sucesso!", MessageType.success);
 		redirectAttributes.addFlashAttribute("message", message);

@@ -1,24 +1,17 @@
 package br.com.exception.repository;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import br.com.exception.model.GameModel; 
+import org.springframework.stereotype.Repository;
 
+import br.com.exception.model.GameModel;
+
+@Repository
 public class GameRepository {
 
-	private static GameRepository instance;
 	private static Map<Integer, GameModel> games;
-
-	public static GameRepository getInstance() {
-		if (instance == null) {
-			return new GameRepository();
-		}
-		return instance;
-	}
 
 	private GameRepository() {
 		games = new HashMap<Integer, GameModel>();
@@ -66,10 +59,8 @@ public class GameRepository {
 				"Action, Adventure, Indie, RPG", "ReLogic", "Relogic", 19.99, "https://steamcdn-a.akamaihd.net/steam/apps/105600/header.jpg?t=1580862559"));
 	}
 
-	public List<GameModel> retrieveAllGames() {
-		List<GameModel> gameList = new ArrayList<GameModel>(games.values());
-		Collections.reverse(gameList);
-		return gameList;
+	public Collection<GameModel> retrieveAllGames() {
+		return games.values();
 	}
 	
 	public GameModel retrieveOneById(Integer id) {
