@@ -19,6 +19,7 @@
 <title>Exception Now Games</title>
 
 <c:set value="${pageContext.request.contextPath}" var="contextPath" />
+
 </head>
 <body class="-bg-primary-color">
 	<header>
@@ -37,7 +38,7 @@
 					<li class="nav-item active"><a class="nav-link"
 						href="<c:url value="/" />">Início</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="<c:url value="/game/form?page=newGame" />">Adicionar
+						href="${contextPath}/game/form?page=newGame">Adicionar
 							Jogo</a></li>
 					<li class="nav-item"><a class="nav-link disabled" href="#">Amigos</a>
 					</li>
