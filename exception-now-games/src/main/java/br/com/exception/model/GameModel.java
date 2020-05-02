@@ -1,17 +1,39 @@
 package br.com.exception.model;
 
-public class GameModel {
-	private int id;
-	private String name;
-	private String description;
-	private String genre;
-	private String developer;
-	private String publisher;
-	private String image;
-	private double price;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
-	public GameModel(int id, String name, String description, String genre, String developer, String publisher,
-			double price, String image) {
+public class GameModel { 
+	  
+	private Integer id;
+	
+	@NotBlank(message = "O campo nome é obrigatório e não deve ser em branco.")
+	private String name;
+	
+	@NotBlank(message = "O campo descrição é obrigatório e não deve ser em branco.")
+	private String description;
+	
+	@NotBlank(message = "O campo gênero é obrigatório e não deve ser em branco.")
+	private String genre;
+	
+	@NotBlank(message = "O campo developer é obrigatório e não deve ser em branco.")
+	private String developer;
+	
+	@NotBlank(message = "O campo publisher é obrigatório e não deve ser em branco.")
+	private String publisher;
+	
+	@DecimalMin(value = "0.01", message = "O jogo deve custar no mínimo R$0,01.")
+	@DecimalMax(value = "9999.99", message = "O jogo deve custar no máximo R$9999,99.")
+	@NotNull(message = "É obrigatório informar o preço do jogo.")
+	private Double price;
+	
+	@NotBlank(message = "O URL da imagem do jogo é obrigatório e não deve ser em branco.")
+	private String imageUrl;
+	
+	public GameModel(Integer id, String name, String description, String genre, String developer, String publisher,
+			Double price, String imageUrl) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -20,14 +42,14 @@ public class GameModel {
 		this.developer = developer;
 		this.publisher = publisher;
 		this.price = price;
-		this.image = image;
+		this.imageUrl = imageUrl;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -71,19 +93,19 @@ public class GameModel {
 		this.publisher = publisher;
 	}
 
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
-	public String getImage() {
-		return image;
+	public String getImageUrl() {
+		return imageUrl;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 }

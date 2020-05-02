@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import br.com.exception.model.GameModel;
+import br.com.exception.model.GameModel; 
 
 public class GameRepository {
 
@@ -45,7 +45,7 @@ public class GameRepository {
 		games.put(7, new GameModel(7, "Resident Evil 3",
 				"Cuphead is a classic run and gun action game heavily focused on boss battles and inspired by cartoons of the 1930s. ",
 				"Action, Indie", " Studio MDHR Entertainment Inc.", "Studio MDHR Entertainment Inc", 36.99,"https://i.pinimg.com/originals/01/a3/8f/01a38fb96317ff8658bc243fdeeac4d5.jpg"));
-
+ 
 		games.put(8, new GameModel(8, "Dungeon Souls",
 				"Cuphead is a classic run and gun action game heavily focused on boss battles and inspired by cartoons of the 1930s. ",
 				"Action, Indie", " Studio MDHR Entertainment Inc.", "Studio MDHR Entertainment Inc", 36.99,"https://4.bp.blogspot.com/-E7rx1ZZ8k1A/VbIqP0OyPJI/AAAAAAAAA2A/L1n_vx48DzM/s1600/qW3aLM.png"));
@@ -59,11 +59,22 @@ public class GameRepository {
 				"Simulação, Direção, Realístico, Automobile Slim ", " Studio MDHR Entertainment Inc.", "Studio MDHR Entertainment Inc", 36.99,"https://steamcdn-a.akamaihd.net/steam/apps/227300/header.jpg?t=1587666184"));
 		
 		
-		}
-	
+		
+		games.put(11, new GameModel(11, "Terraria",
+				"Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. Four Pack also available!",
+				"Action, Adventure, Indie, RPG", "ReLogic", "Relogic", 19.99, "https://steamcdn-a.akamaihd.net/steam/apps/105600/header.jpg?t=1580862559"));
+	}
+
 	public List<GameModel> retrieveAllGames() {
 		List<GameModel> gameList = new ArrayList<GameModel>(games.values());
-		
+
 		return gameList;
 	}
+	
+	public void create(GameModel gameModel) {
+		Integer gameId = games.size() + 1;
+		gameModel.setId(gameId);
+		games.put(gameId, gameModel);
+	}
 }
+

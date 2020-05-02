@@ -1,16 +1,13 @@
 package br.com.exception.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ExceptionNowController {
-
-	@GetMapping("/")
-	 public String home(Model model) {
-		return "redirect:game";   
-	}
+public class ExceptionNowController{
 	
+//	@RequestMapping
+//	public String home() {
+//		return "index";
+//	}
 	
 }
