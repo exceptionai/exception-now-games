@@ -35,7 +35,7 @@
 					<li class="nav-item active"><a class="nav-link"
 						href="<c:url value="/" />">Início</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="<c:url value="/game/new" />">Adicionar Jogo</a></li>
+						href="<c:url value="game/form?page=newGame" />">Adicionar Jogo</a></li>
 					<li class="nav-item"><a class="nav-link disabled" href="#">Amigos</a>
 					</li>
 					<li class="nav-item"><a class="nav-link disabled" href="#">Meus

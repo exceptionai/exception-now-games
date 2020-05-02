@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.exception.model.GameModel;
@@ -27,9 +28,17 @@ public class GameController {
 		return "index";
 	}
 	
-	@GetMapping("new")
-	 public String formAdd(@ModelAttribute("gameModel") GameModel gameModel) {
-		return "newGame";
+	@GetMapping("form")
+	 public String form(@ModelAttribute("gameModel") GameModel gameModel,
+			 			@RequestParam String page,
+			 			@RequestParam(required = false) Integer id,
+			 			Model model) {
+		
+		if ("editGame".equals(page)) {
+			model.addAttribute("game", repository.retrieveOneById(id));
+		}
+		
+		return page;
 	}
 	
 	@PostMapping("new")
