@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -35,7 +36,7 @@ public class GameController {
 			 			Model model) {
 		
 		if ("editGame".equals(page)) {
-			model.addAttribute("game", repository.retrieveOneById(id));
+			model.addAttribute("gameModel", repository.retrieveOneById(id));
 		}
 		
 		return page;
@@ -50,6 +51,19 @@ public class GameController {
 		repository.create(gameModel);
 		
 		redirectAttributes.addFlashAttribute("message", gameModel.getName() + " cadastrado com sucesso!");
+		
+		return "redirect:/game";
+	}
+	
+	@PutMapping()
+	 public String update(@Valid GameModel gameModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+		
+		if (bindingResult.hasErrors())
+			return "editGame";
+		
+		repository.update(gameModel);
+		
+		redirectAttributes.addFlashAttribute("message", gameModel.getName() + " editado com sucesso!");
 		
 		return "redirect:/game";
 	}

@@ -50,5 +50,9 @@ public class GameRepository {
 		gameModel.setId(gameId);
 		games.put(gameId, gameModel);
 	}
+	
+	public void update(GameModel gameModel) {
+		games.put(gameModel.getId(), gameModel);
+	}
 }
 
