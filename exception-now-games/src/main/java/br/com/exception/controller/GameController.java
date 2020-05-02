@@ -66,7 +66,8 @@ public class GameController {
 		
 		repository.update(gameModel);
 		
-		redirectAttributes.addFlashAttribute("message", gameModel.getName() + " editado com sucesso!");
+		MessageModel message = new MessageModel("Sucesso",gameModel.getName() + " editado com sucesso!", MessageType.success);
+		redirectAttributes.addFlashAttribute("message", message);
 		
 		return "redirect:/game";
 	}

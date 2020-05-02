@@ -45,7 +45,7 @@
 				id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
-						href="<c:url value="/" />">Inï¿½cio</a></li>
+						href="<c:url value="/" />">Início</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="${contextPath}/game/form?page=newGame">Adicionar
 							Jogo</a></li>
