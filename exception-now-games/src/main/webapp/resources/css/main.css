@@ -1,3 +1,16 @@
+@media (min-width: 300px){
+	.navbar-expand-lg .navbar-nav {
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	}
+	
+}
+@media (max-width: 600px){
+	.navbar-collapse.container {
+		padding-left:1em;
+	}
+	
+}
 .-bg-primary-color{
     background-color: #0f1215;
 }
@@ -9,6 +22,13 @@
 .games-container{
 	padding-top: 2em;
 	color: #fff;
+	padding-left:0;
+	padding-right:0;
+}
+
+.games-container .content-title{
+    padding-left: 1.5em;
+    padding-bottom: 1em;
 }
 
 .content-title{
@@ -55,6 +75,45 @@ img{
 header > .row > img{
 	width: 26px;
     margin-left: 1.4em;
+} 
+
+.vanillatoasts-icon{
+    box-shadow: none;
+    left: -45px;
+    top: 0;
+    height: 60px;
+    width: 60px;
+    z-index: 1000000;
+    border: none;
+    background-color: #1a1c25;
+}
+img.vanillatoasts-icon{
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.vanillatoasts-toast {
+    background: rgba(59, 61, 74, 0.98);
+}
+
+#vanillatoasts-container{
+	z-index: 999999;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.vanillatoasts-text{
+    color: #c1c1c1;
+	
+}
+
+.vanillatoasts-title{
+    color: #fff;
+
 }
 
 .title-container .application-title{
@@ -91,15 +150,19 @@ nav.navbar ul li.nav-item.active{
 .games_list {
 	display: flex;
 	flex-wrap: wrap;
+	align-items:start;
 }
 
-.card {
+.games-card {
 	width: 18rem;
 	color: white;
-	margin: 12px 24px 24px;
-	background-color: transparent;
+	background-color: #15181d;
 	text-align: justify;	
 	border: 1px solid firebrick;
+}
+
+.games-card a {
+	color: #28c5e0;
 }
 
 .card-title {

@@ -5,8 +5,8 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-public class GameModel {
-	
+public class GameModel { 
+	  
 	private Integer id;
 	
 	@NotBlank(message = "O campo nome é obrigatório e não deve ser em branco.")
@@ -31,6 +31,7 @@ public class GameModel {
 	
 	@NotBlank(message = "O URL da imagem do jogo é obrigatório e não deve ser em branco.")
 	private String imageUrl;
+
 	
 	public GameModel(Integer id, String name, String description, String genre, String developer, String publisher,
 			Double price, String imageUrl) {
@@ -108,4 +109,5 @@ public class GameModel {
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+
 }

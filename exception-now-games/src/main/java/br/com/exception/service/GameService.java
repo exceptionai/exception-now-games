@@ -19,7 +19,7 @@ public class GameService {
 
 	public GameModel getById(Integer id){
 		return repository.retrieveOneById(id);
-	}
+	} 
 	
 
 	public List<GameModel> getAll(){

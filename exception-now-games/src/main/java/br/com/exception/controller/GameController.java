@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.exception.model.GameModel;
+import br.com.exception.model.MessageModel;
+import br.com.exception.model.MessageType;
 import br.com.exception.service.GameService;
 
 @Controller
@@ -52,7 +55,8 @@ public class GameController {
 		
 		service.create(gameModel);
 		
-		redirectAttributes.addFlashAttribute("message", gameModel.getName() + " cadastrado com sucesso!");
+		MessageModel message = new MessageModel("Sucesso",gameModel.getName() + " cadastrado com sucesso!", MessageType.success);
+		redirectAttributes.addFlashAttribute("message", message);
 		
 		return "redirect:/game";
 	}
@@ -65,7 +69,8 @@ public class GameController {
 		
 		service.update(gameModel);
 		
-		redirectAttributes.addFlashAttribute("message", gameModel.getName() + " editado com sucesso!");
+		MessageModel message = new MessageModel("Sucesso",gameModel.getName() + " editado com sucesso!", MessageType.success);
+		redirectAttributes.addFlashAttribute("message", message);
 		
 		return "redirect:/game";
 	}
