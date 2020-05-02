@@ -36,7 +36,7 @@
 			        <a class="nav-link" href="<c:url value="/" />">Início</a>
 			      </li>
 			      <li class="nav-item active">
-			        <a class="nav-link" href="<c:url value="/game/new" />">Adicionar Jogo</a>
+			        <a class="nav-link" href="${contextPath}/game/form?page=newGame">Adicionar Jogo</a>
 			      </li>
 			      <li class="nav-item">
 			        <a class="nav-link disabled" href="#">Amigos</a>
@@ -126,8 +126,8 @@
 				</font><br/>
 			</div>
 			
-			<a class="btn btn-secondary btn-lg" href="${contextPath}/game">Voltar</a>
-			<button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+			<a class="btn btn-secondary btn-lg" href="${contextPath}/game">Cancelar</a>
+			<button type="submit" class="btn btn-primary btn-lg">Confirmar</button>
 			
 		</form:form>
 		
