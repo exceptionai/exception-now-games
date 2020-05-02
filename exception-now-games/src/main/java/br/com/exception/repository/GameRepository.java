@@ -1,6 +1,7 @@
 package br.com.exception.repository;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,10 +36,8 @@ public class GameRepository {
 				"Action, Adventure, Indie, RPG", "ReLogic", "Relogic", 19.99, "https://steamcdn-a.akamaihd.net/steam/apps/105600/header.jpg?t=1580862559"));
 	}
 
-	public List<GameModel> retrieveAllGames() {
-		List<GameModel> gameList = new ArrayList<GameModel>(games.values());
-
-		return gameList;
+	public Collection<GameModel> retrieveAllGames() {
+		return games.values();
 	}
 	
 	public GameModel retrieveOneById(Integer id) {
