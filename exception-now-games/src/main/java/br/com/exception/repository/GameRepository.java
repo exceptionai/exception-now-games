@@ -72,14 +72,18 @@ public class GameRepository {
 		return gameList;
 	}
 	
+	public GameModel retrieveOneById(Integer id) {
+		return games.get(id);
+	}
+	
 	public void create(GameModel gameModel) {
 		Integer gameId = games.size() + 1;
 		gameModel.setId(gameId);
 		games.put(gameId, gameModel);
 	}
-
-	public void delete(Integer id) {
-		games.remove(id);
+	
+	public void update(GameModel gameModel) {
+		games.put(gameModel.getId(), gameModel);
 	}
 }
 

@@ -18,7 +18,7 @@ public class GameModel {
 	@NotBlank(message = "O campo gênero é obrigatório e não deve ser em branco.")
 	private String genre;
 	
-	@NotBlank(message = "O campo developer é obrigatório e não deve ser em branco.")
+	@NotBlank(message = "O campo desenvolvedor(a) é obrigatório e não deve ser em branco.")
 	private String developer;
 	
 	@NotBlank(message = "O campo publisher é obrigatório e não deve ser em branco.")

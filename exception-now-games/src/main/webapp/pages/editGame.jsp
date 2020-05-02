@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page isErrorPage="true" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -56,9 +57,9 @@
 			</nav>
 		</header>
 		<main class="container games-container _container">
-		<h2 class="content-title">Adicionar Game</h2>
+		<h2 class="content-title">Editar ${game.name}</h2>
 		
-		<form:form modelAttribute="gameModel" action="${contextPath}/game/new" method="POST">
+		<form:form modelAttribute="gameModel" action="${contextPath}/game" method="PUT">
 		
 			<spring:hasBindErrors name="gameModel">
 				<div class="alert alert-danger" role="alert">
@@ -66,6 +67,8 @@
 					<form:errors path="*" class="has-error" />
 				</div>
 			</spring:hasBindErrors>
+			
+			<form:input type="hidden" path="id" name="id" id="id" />
 		
 			<div class="form-group">
 				<label for="name">Nome: </label>
@@ -77,7 +80,7 @@
 			
 			<div class="form-group">
 				<label for="description">Descrição:</label>
-				<form:textarea id="description" class="form-control" path="description" name="description" rows="4"></form:textarea>
+				<form:textarea id="description" class="form-control" path="description" name="description" rows="4" ></form:textarea>
 				<font color="red">
 					<form:errors path="description" />
 				</font><br/>
@@ -123,8 +126,8 @@
 				</font><br/>
 			</div>
 			
-			<a class="btn btn-secondary btn-lg" href="${contextPath}/game">Voltar</a>
-			<button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+			<a class="btn btn-secondary btn-lg" href="${contextPath}/game">Cancelar</a>
+			<button type="submit" class="btn btn-primary btn-lg">Confirmar</button>
 			
 		</form:form>
 		

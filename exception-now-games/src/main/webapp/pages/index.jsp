@@ -25,6 +25,8 @@
 <script src="<c:url value="/resources/js/autoreload.js" />"></script>
 <title>Exception Now Games</title>
 
+<c:set value="${pageContext.request.contextPath}" var="contextPath" />
+
 </head>
 <body class="-bg-primary-color">
 	<header>
@@ -43,9 +45,10 @@
 				id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
-						href="<c:url value="/" />">Início</a></li>
+						href="<c:url value="/" />">Inï¿½cio</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="<c:url value="/game/new" />">Adicionar Jogo</a></li>
+						href="${contextPath}/game/form?page=newGame">Adicionar
+							Jogo</a></li>
 					<li class="nav-item"><a class="nav-link disabled" href="#">Amigos</a>
 					</li>
 					<li class="nav-item"><a class="nav-link disabled" href="#">Meus
@@ -79,39 +82,39 @@
 		
 		<div class="games_list grid" >
 		
-			<c:forEach items="${games}" var="game">
-				<div class="card games-card grid-item">
-					<img class="card-img-top"
-						src="${game.imageUrl}" 
+		<c:forEach items="${games}" var="game">
+			<div class="card games-card grid-item">
+				<img class="card-img-top" src="${game.imageUrl}" 
 						alt="Card image cap">
 					<div class="card-body ">
 						<h3 class="card-title">${game.name}</h3>
 						<h4 class="card-subtitle mb-2 text-muted">${game.genre}</h4>
-						<a href="#" class="card-link">Detalhes</a> <a href="#"
-							class="card-link">Editar</a> <a href="#" class="card-link">Remover</a>
+						<a href="#" class="card-link">Detalhes</a> <a
+							href="${contextPath}/game/form?page=editGame&id=${game.id}" class="card-link">Editar</a>
+						<a href="#" class="card-link">Remover</a>
 					</div>
 				</div>
 			</c:forEach>
 		</div>
 	</main>
 	<script src="<c:url value="/resources/js/main.js" />"></script>
-	<script>
-<c:if test="${not empty message}">
-$(document).ready(() => {
-	setTimeout(() => {
-		VanillaToasts.create({
-		  title: "${message.title}!",
-		  text: "${message.message}",
-		  type: "${message.type}",
-		  icon: "${message.icon}",
-		  timeout: 10000
-		});
-		$(".vanillatoasts-toast").prepend('<div class="vanillatoasts-icon">')
-	}, 500);
-	
-});
-	
-</c:if>
-</script>
+	<c:if test="${not empty message}">
+		<script>
+			$(document).ready(() => {
+				setTimeout(() => {
+					VanillaToasts.create({
+					title: "${message.title}!",
+					text: "${message.message}",
+					type: "${message.type}",
+					icon: "${message.icon}",
+					timeout: 10000
+					});
+					$(".vanillatoasts-toast").prepend('<div class="vanillatoasts-icon">')
+				}, 500);
+				
+			});
+				
+		</script>
+	</c:if>
 </body>
 </html>
