@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <link rel="shortcut icon"
 	href="<c:url value="/resources/img/logo.png" />" />
-<link rel="stylesheet" 
+<link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
@@ -18,13 +18,10 @@
   src="https://code.jquery.com/jquery-3.5.0.min.js"
   integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
   crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanillatoasts@1.3.0/vanillatoasts.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/vanillatoasts@1.3.0/vanillatoasts.css" rel="stylesheet">
 
 <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/autoreload.js" />"></script>
 <title>Exception Now Games</title>
-
 </head>
 <body class="-bg-primary-color">
 	<header>
@@ -36,7 +33,7 @@
 				<h1 class="application-title">Exception Now Games</h1>
 			</div>
 		</div>
-		<nav class="navbar navbar-expand-lg -bg-secondary sticky-top">
+		<nav class="navbar navbar-expand-lg -bg-secondary">
 			 
 						   
 			<div class="collapse navbar-collapse container _container"
@@ -75,43 +72,10 @@
 		</nav>
 	</header>
 	<main class="container games-container _container">
-		<h2 class="content-title">Games</h2>
+		<h2 class="content-title text-center">Deu Erro!</h2>
+
 		
-		<div class="games_list grid" >
-		
-			<c:forEach items="${games}" var="game">
-				<div class="card games-card grid-item">
-					<img class="card-img-top"
-						src="${game.imageUrl}" 
-						alt="Card image cap">
-					<div class="card-body ">
-						<h3 class="card-title">${game.name}</h3>
-						<h4 class="card-subtitle mb-2 text-muted">${game.genre}</h4>
-						<a href="#" class="card-link">Detalhes</a> <a href="#"
-							class="card-link">Editar</a> <a href="#" class="card-link">Remover</a>
-					</div>
-				</div>
-			</c:forEach>
-		</div>
 	</main>
 	<script src="<c:url value="/resources/js/main.js" />"></script>
-	<script>
-<c:if test="${not empty message}">
-$(document).ready(() => {
-	setTimeout(() => {
-		VanillaToasts.create({
-		  title: "${message.title}!",
-		  text: "${message.message}",
-		  type: "${message.type}",
-		  icon: "${message.icon}",
-		  timeout: 10000
-		});
-		$(".vanillatoasts-toast").prepend('<div class="vanillatoasts-icon">')
-	}, 500);
-	
-});
-	
-</c:if>
-</script>
 </body>
 </html>

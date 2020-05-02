@@ -1,6 +1,7 @@
 package br.com.exception.repository;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -67,7 +68,7 @@ public class GameRepository {
 
 	public List<GameModel> retrieveAllGames() {
 		List<GameModel> gameList = new ArrayList<GameModel>(games.values());
-
+		Collections.reverse(gameList);
 		return gameList;
 	}
 	
@@ -75,6 +76,10 @@ public class GameRepository {
 		Integer gameId = games.size() + 1;
 		gameModel.setId(gameId);
 		games.put(gameId, gameModel);
+	}
+
+	public void delete(Integer id) {
+		games.remove(id);
 	}
 }
 

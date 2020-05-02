@@ -77,6 +77,45 @@ header > .row > img{
     margin-left: 1.4em;
 } 
 
+.vanillatoasts-icon{
+    box-shadow: none;
+    left: -45px;
+    top: 0;
+    height: 60px;
+    width: 60px;
+    z-index: 1000000;
+    border: none;
+    background-color: #1a1c25;
+}
+img.vanillatoasts-icon{
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.vanillatoasts-toast {
+    background: rgba(59, 61, 74, 0.98);
+}
+
+#vanillatoasts-container{
+	z-index: 999999;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.vanillatoasts-text{
+    color: #c1c1c1;
+	
+}
+
+.vanillatoasts-title{
+    color: #fff;
+
+}
+
 .title-container .application-title{
 	padding-bottom:.5em;	
 	padding-top:.5em;	
