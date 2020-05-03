@@ -38,4 +38,8 @@ public class GameService {
 	public void update(GameModel model) {
 		repository.update(model);
 	}
+	
+	public void delete(Integer id) {
+		repository.delete(id);
+	}
 }
