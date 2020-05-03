@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -70,6 +71,17 @@ public class GameController {
 		service.update(gameModel);
 		
 		MessageModel message = new MessageModel("Sucesso",gameModel.getName() + " editado com sucesso!", MessageType.success);
+		redirectAttributes.addFlashAttribute("message", message);
+		
+		return "redirect:/game";
+	}
+	
+	@DeleteMapping("/{id}")
+	public String delete(@PathVariable("id") int id, RedirectAttributes redirectAttributes) {
+		
+		service.delete(id);
+		
+		MessageModel message = new MessageModel("Sucesso", " Jogo excluído da lista.", MessageType.success);
 		redirectAttributes.addFlashAttribute("message", message);
 		
 		return "redirect:/game";

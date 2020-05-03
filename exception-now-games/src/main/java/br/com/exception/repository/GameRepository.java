@@ -76,5 +76,9 @@ public class GameRepository {
 	public void update(GameModel gameModel) {
 		games.put(gameModel.getId(), gameModel);
 	}
+	
+	public void delete(Integer id) {
+		games.remove(id);
+	}
 }
 
