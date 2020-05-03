@@ -24,7 +24,7 @@ public class GameModel {
 	@NotBlank(message = "O campo publisher é obrigatório e não deve ser em branco.")
 	private String publisher;
 	
-	@DecimalMin(value = "0.01", message = "O jogo deve custar no mínimo R$0,01.")
+	@DecimalMin(value = "0", message = "O jogo não deve ter preço negativo")
 	@DecimalMax(value = "9999.99", message = "O jogo deve custar no máximo R$9999,99.")
 	@NotNull(message = "É obrigatório informar o preço do jogo.")
 	private Double price;

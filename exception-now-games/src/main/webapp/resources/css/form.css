@@ -1,0 +1,61 @@
+.games-container{
+    padding-right: 15px;
+    padding-left: 15px;	
+    padding-bottom: 15px;	
+}
+
+.form-img, .form-img img{
+	max-height: 360px;
+}
+
+#vanillatoasts-container, .vanillatoasts-toast{
+	width: auto!important;
+}
+
+.custom-control-input:checked~.custom-control-label::before{
+	border-color: #420b0b!important;
+    background-color: firebrick!important;
+	
+}
+.custom-control-input:focus ~ .custom-control-label::before {
+	box-shadow:0 0 0 0.2rem rgba(178, 34, 34, .25)!important;
+}
+	
+.form-control:disabled, .form-control[readonly]{
+    background-color: #2f2f2f!important;
+}
+
+.price-preppend{
+    background-color: #24252e;
+    color: #b6b7b9;
+   	border-color:#1a1c25;
+	
+}
+
+
+.form-img img{
+	border: 3px solid firebrick;
+	border-radius: 6px;
+    margin: 0 auto;
+}
+
+.form-add .form-row{
+    padding-bottom: .9rem;
+}
+
+.form-buttons{
+	
+}
+
+.form-control{
+	background-color:#444654;
+	border-color:#090a0c;
+	color:#eff7ff;
+}
+
+.form-control:focus{
+	background-color:#6a6b6f;
+	border-color:#090a0c;
+	color:#eff7ff;
+	box-shadow:0 0 0 0.2rem rgba(178, 34, 34, .25);
+}
