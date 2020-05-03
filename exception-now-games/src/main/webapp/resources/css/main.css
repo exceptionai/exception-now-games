@@ -102,6 +102,10 @@ header > .row > img{
 	width:250px;
 }
 
+.border-primary-games{
+	border-color: firebrick;
+}
+
 img.vanillatoasts-icon{
     border-radius: 0;
     background-color: transparent;

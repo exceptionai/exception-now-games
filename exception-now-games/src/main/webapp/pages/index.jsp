@@ -98,17 +98,17 @@
 	<c:forEach items="${games}" var="game" >
 		<div class="modal fade" id="modalGame${game.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 				  <div class="modal-dialog modal-dialog-centered" role="document">
-				    <div class="modal-content">
-				      <div class="modal-header">
+				    <div class="modal-content -bg-secondary text-light">
+				      <div class="modal-header border-primary-games">
 				        <h5 class="modal-title" id="exampleModalCenterTitle">Remover ${game.name}</h5>
 				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true">&times;</span>
+				          <span aria-hidden="true" class="text-white">&times;</span>
 				        </button>
 				      </div>
 				      <div class="modal-body">
 				        Deseja realmente remover o jogo ${game.name}?
 				      </div>
-				      <div class="modal-footer">
+				      <div class="modal-footer border-primary-games">
 						<form:form action="${contextPath}/game/${game.id}" method="delete">
 					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 					        <button type="submit" class="btn btn-primary">Confirmar</button>
