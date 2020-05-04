@@ -88,4 +88,18 @@ public class GameController {
 		
 		return "redirect:/game";
 	}
+	
+	@GetMapping("/{id}")
+	public String details(@PathVariable int id,Model model) {
+		
+		GameModel game = service.getById(id);
+		model.addAttribute("game",game);
+		
+		
+		return "details";
+		
+	}
+	
+	
+	
 }
