@@ -62,7 +62,7 @@ public class GameController {
 		return "redirect:/game";
 	}
 	
-	@PutMapping()
+	@PutMapping
 	 public String update(@Valid GameModel gameModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 		
 		if (bindingResult.hasErrors())
@@ -79,9 +79,11 @@ public class GameController {
 	@DeleteMapping("/{id}")
 	public String delete(@PathVariable("id") int id, RedirectAttributes redirectAttributes) {
 		
+		GameModel model = service.getById(id);
+		
 		service.delete(id);
 		
-		MessageModel message = new MessageModel("Sucesso", " Jogo excluído da lista.", MessageType.success);
+		MessageModel message = new MessageModel("Sucesso", model.getName() + " excluído da lista.", MessageType.success);
 		redirectAttributes.addFlashAttribute("message", message);
 		
 		return "redirect:/game";

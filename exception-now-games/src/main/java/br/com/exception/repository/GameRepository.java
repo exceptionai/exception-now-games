@@ -12,6 +12,7 @@ import br.com.exception.model.GameModel;
 public class GameRepository {
 
 	private static Map<Integer, GameModel> games;
+	private static Integer lastId;
 
 	private GameRepository() {
 		games = new HashMap<Integer, GameModel>();
@@ -57,6 +58,7 @@ public class GameRepository {
 		games.put(11, new GameModel(11, "Terraria",
 				"Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. Four Pack also available!",
 				"Action, Adventure, Indie, RPG", "ReLogic", "Relogic", 19.99, "https://steamcdn-a.akamaihd.net/steam/apps/105600/header.jpg?t=1580862559"));
+		GameRepository.lastId = games.size();
 	}
 
 	public Collection<GameModel> retrieveAllGames() {
@@ -68,7 +70,7 @@ public class GameRepository {
 	}
 	
 	public void create(GameModel gameModel) {
-		Integer gameId = games.size() + 1;
+		Integer gameId = ++GameRepository.lastId;
 		gameModel.setId(gameId);
 		games.put(gameId, gameModel);
 	}

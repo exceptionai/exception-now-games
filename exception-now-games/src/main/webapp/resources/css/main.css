@@ -64,6 +64,16 @@ img{
 .user-area i.disabled{
 	color: #6c757d;
 }
+
+.btn-secondary{
+	background-color:#2a2b35;
+	border-color:#090a0c;
+}
+
+.btn-primary{
+	background-color: firebrick!important;
+	border-color:#420b0b!important;
+}
 	
 .-bg-card{
 	background-color: #1a1c25;
@@ -87,6 +97,15 @@ header > .row > img{
     border: none;
     background-color: #1a1c25;
 }
+
+.no-game{
+	width:250px;
+}
+
+.border-primary-games{
+	border-color: firebrick;
+}
+
 img.vanillatoasts-icon{
     border-radius: 0;
     background-color: transparent;
