@@ -94,9 +94,18 @@
 							<div class="col-sm-3">Publicado por:</div>
 							<div class="col">${game.publisher}</div>
 						</div>
+						<div class="row">
+							<div class="col-sm-3">Preço:</div>
+							<c:if test="${ game.price > 0}">
+								<div class="col">R$ ${game.price}</div>
+							</c:if>
+							<c:if test="${ game.price == 0}">
+								<div class="col">Gratuito</div>
+							</c:if>
+						</div>
 						<div class="pt-4-my-md-5 pt-md-5">
 							<a class="btn btn-secondary text-light btn-lg mr-4" href="${contextPath}/game">Voltar</a>
-							<a class="btn btn-primary btn-lg" href="${contextPath}/game/form?page=editGame&id=${game.id}">Alterar</a>
+							<a class="btn btn-primary btn-lg" href="${contextPath}/game/form?page=editGame&id=${game.id}">Editar</a>
 						</div>
 						
 				</div>
