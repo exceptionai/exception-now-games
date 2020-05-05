@@ -1,5 +1,8 @@
 package br.com.exception.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.exception.model.GameModel;
 import br.com.exception.model.MessageModel;
 import br.com.exception.model.MessageType;
+import br.com.exception.repository.GameRepository;
 import br.com.exception.service.GameService;
 
 @Controller
@@ -39,10 +43,17 @@ public class GameController {
 	 public String form(@ModelAttribute("gameModel") GameModel gameModel,
 			 			@RequestParam String page,
 			 			@RequestParam(required = false) Integer id,
-			 			Model model) {
+			 			Model model,
+			 			RedirectAttributes redirectAttributes) {
 		
 		if ("editGame".equals(page)) {
-			model.addAttribute("gameModel", service.getById(id));
+			GameModel game = service.getById(id);
+			if(game == null) {
+				MessageModel message = new MessageModel("Houve uma falha", "Ocorreu um erro ao editar. ", MessageType.error);
+				redirectAttributes.addFlashAttribute("message", message);
+				return "redirect:/game";
+			}
+			model.addAttribute("gameModel", game);
 		}
 		
 		return page;
@@ -67,7 +78,8 @@ public class GameController {
 		
 		if (bindingResult.hasErrors())
 			return "editGame";
-		
+			
+					
 		service.update(gameModel);
 		
 		MessageModel message = new MessageModel("Sucesso",gameModel.getName() + " editado com sucesso!", MessageType.success);
@@ -77,10 +89,15 @@ public class GameController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public String delete(@PathVariable("id") int id, RedirectAttributes redirectAttributes) {
-		
+	public String delete(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes) {
 		GameModel model = service.getById(id);
 		
+		if(model == null) {
+			MessageModel message = new MessageModel("Houve uma falha", "Ocorreu um erro ao excluir da lista.", MessageType.error);
+			redirectAttributes.addFlashAttribute("message", message);
+			return "redirect:/game";
+		}
+				
 		service.delete(id);
 		
 		MessageModel message = new MessageModel("Sucesso", model.getName() + " excluído da lista.", MessageType.success);
