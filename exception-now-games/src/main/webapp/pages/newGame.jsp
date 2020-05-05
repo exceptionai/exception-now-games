@@ -69,7 +69,7 @@
 		<main class="container games-container _container">
 		<h2 class="content-title">Adicionar Game</h2>
 		
-		<form:form modelAttribute="gameModel" action="${contextPath}/game/new" method="POST">
+		<form:form modelAttribute="gameModel" action="${contextPath}/game" method="POST">
 		
 			
 			<div class="form-row pb-4">

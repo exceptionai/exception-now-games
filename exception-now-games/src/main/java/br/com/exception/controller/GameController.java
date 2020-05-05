@@ -33,7 +33,7 @@ public class GameController {
 	GameService service;
 
 	@GetMapping
-	 public String home(Model model) {
+	 public String games(Model model) {
 		model.addAttribute("games", service.getAll());
 		
 		return "index";
@@ -59,7 +59,7 @@ public class GameController {
 		return page;
 	}
 	
-	@PostMapping("new")
+	@PostMapping
 	 public String saveNew(@Valid GameModel gameModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 		
 		if (bindingResult.hasErrors())
