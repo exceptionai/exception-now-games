@@ -88,4 +88,23 @@ public class GameController {
 		
 		return "redirect:/game";
 	}
+	
+	@GetMapping("/{id}")
+	public String details(@PathVariable int id,Model model,RedirectAttributes redirectAttributes) {
+		
+		GameModel game = service.getById(id);
+		
+		if (game == null) {
+			MessageModel message = new MessageModel("Erro","Esse jogo não existe!", MessageType.error);
+			redirectAttributes.addFlashAttribute("message", message);
+			return "redirect:/game";
+		}
+		
+		model.addAttribute("game",game);
+		return "details";
+		
+	}
+	
+	
+	
 }
