@@ -1,7 +1,6 @@
 package br.com.exception.repository;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +17,13 @@ public class GameRepository {
 	public JdbcTemplate jdbcTemplate;
 
 	private static Map<Integer, GameModel> games;
-	private static Integer lastId;
 
-	public static final String SELECT_ALL = "SELECT * FROM TB_GAMES";
-	public static final String SAVE = "INSERT INTO TB_GAMES (NAME, DESCRIPTION, GENRE, DEVELOPER, PUBLISHER, PRICE, IMAGE_URL)"
+	private static final String SELECT_ALL = "SELECT * FROM TB_GAMES";
+	private static final String SELECT = "SELECT * FROM TB_GAMES WHERE ID = ?";
+	private static final String SAVE = "INSERT INTO TB_GAMES (NAME, DESCRIPTION, GENRE, DEVELOPER, PUBLISHER, PRICE, IMAGE_URL)"
+			
 			+ "VALUES (?, ?, ?, ?, ?, ?, ?)";
+	private static final String UPDATE = "UPDATE TB_GAMES SET NAME = ?, DESCRIPTION = ?, GENRE = ?, DEVELOPER = ?, PUBLISHER = ?, PRICE = ?, IMAGE_URL = ? WHERE ID = ?";
 
 	public GameRepository() {
 		/*
@@ -103,7 +104,7 @@ public class GameRepository {
 	}
 
 	public GameModel retrieveOneById(Integer id) {
-		return games.get(id);
+		return this.jdbcTemplate.queryForObject(SELECT, new BeanPropertyRowMapper<GameModel>(GameModel.class), id);
 	}
 
 	public void create(GameModel gameModel) {
@@ -117,7 +118,8 @@ public class GameRepository {
 	}
 
 	public void update(GameModel gameModel) {
-		games.put(gameModel.getId(), gameModel);
+		jdbcTemplate.update(UPDATE, gameModel.getName(), gameModel.getDescription(), gameModel.getGenre(),
+				gameModel.getDeveloper(), gameModel.getPublisher(), gameModel.getPrice(), gameModel.getImageUrl(), gameModel.getId());
 	}
 
 	public void delete(Integer id) {
