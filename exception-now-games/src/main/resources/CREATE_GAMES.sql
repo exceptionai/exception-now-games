@@ -30,7 +30,7 @@ INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url
 		  'Studio MDHR Entertainment Inc',36.99,
 		  'https://steamcdn-a.akamaihd.net/steam/apps/268910/header.jpg?t=1572039891');
 
-INSERT INTO GAMES (name,description,genre,developer,publiser,price,image_url) VALUES(
+INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url) VALUES(
     'Stardew Valley',
     'Can you learn to live off the land and turn these overgrown fields into a thriving home?',
     'Indie, RPG, Simulation', 'ConcernedApe', 'ConcernedApe',24.99,
