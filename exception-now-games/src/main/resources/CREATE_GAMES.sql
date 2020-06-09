@@ -37,7 +37,7 @@ INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url
     'https://www.bichosgeeks.com/wp-content/uploads/2017/03/stardew-valley-dicas-820x410.jpg'
 );
 
-INSERT INTO GAMES (name,description,genre,developer,publiser,price,image_url) VALUES(
+INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url) VALUES(
     'Cyberpunk 2077',
     'Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality.','Cyberpunk, Open World, RPG', 'CD PROJEKT RED', 'CD PROJEKT RED',59.99,
     'https://i.pinimg.com/originals/87/6d/df/876ddfa41d503ba2e6b9aaa523f44b13.jpg'
