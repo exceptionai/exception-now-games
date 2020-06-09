@@ -1,6 +1,6 @@
 CREATE TABLE TB_GAMES
 (
-    IDGAME      NUMBER(5) NOT NULL PRIMARY KEY,
+    ID      NUMBER(5) NOT NULL PRIMARY KEY,
     DESCRIPTION VARCHAR2(500),
     GENRE       VARCHAR2(100),
     DEVELOPER   VARCHAR2(50),
@@ -106,5 +106,4 @@ INSERT INTO GAMES (name,description,genre,developer,publiser,price,image_url) VA
     'Action, Adventure, Indie, RPG', 'ReLogic', 'Relogic',19.99,
     'https://steamcdn-a.akamaihd.net/steam/apps/105600/header.jpg?t=1580862559'
 );
-
 
