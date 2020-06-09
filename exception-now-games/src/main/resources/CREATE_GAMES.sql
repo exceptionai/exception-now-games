@@ -52,7 +52,7 @@ INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url
     36.99,'https://tribogamer.com/jogos/imagens/banner/5689.jpg'
 );
 
-INSERT INTO GAMES (name,description,genre,developer,publiser,price,image_url) VALUES(
+INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url) VALUES(
     'Dauntless',
     'Cuphead is a classic run and gun action game heavily focused on boss battles and inspired by cartoons of the 1930s. ',
     'Action, Indie', ' Studio MDHR Entertainment Inc.',
