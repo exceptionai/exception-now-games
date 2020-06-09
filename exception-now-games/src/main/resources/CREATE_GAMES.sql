@@ -4,7 +4,7 @@ CREATE TABLE TB_GAMES
     DESCRIPTION VARCHAR2(500),
     GENRE       VARCHAR2(100),
     DEVELOPER   VARCHAR2(50),
-    PUBLISER    VARCHAR2(50),
+    PUBLISHER    VARCHAR2(50),
     PRICE       NUMBER(10, 2),
     NAME        VARCHAR2(100),
     IMAGE_URL   VARCHAR2(300)
@@ -106,4 +106,3 @@ INSERT INTO GAMES (name,description,genre,developer,publiser,price,image_url) VA
     'Action, Adventure, Indie, RPG', 'ReLogic', 'Relogic',19.99,
     'https://steamcdn-a.akamaihd.net/steam/apps/105600/header.jpg?t=1580862559'
 );
-
