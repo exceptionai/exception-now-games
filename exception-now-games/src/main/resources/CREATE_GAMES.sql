@@ -60,7 +60,7 @@ INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url
     'https://switch-brasil.com/wp-content/uploads/2019/12/Phoenix-Labs-Dauntless-Keyart.jpg'
 );
 
-INSERT INTO GAMES (name,description,genre,developer,publiser,price,image_url) VALUES(
+INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url) VALUES(
     'Undertale',
     'Cuphead is a classic run and gun action game heavily focused on boss battles and inspired by cartoons of the 1930s. ',
     'Action, Indie', ' Studio MDHR Entertainment Inc.',
