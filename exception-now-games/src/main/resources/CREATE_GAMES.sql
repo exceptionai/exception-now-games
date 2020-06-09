@@ -68,7 +68,7 @@ INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url
     'https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Undertale_image1600w.jpg'
 );
 
-INSERT INTO GAMES (name,description,genre,developer,publiser,price,image_url) VALUES(
+INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url) VALUES(
     'Resident Evil 3',
     'Cuphead is a classic run and gun action game heavily focused on boss battles and inspired by cartoons of the 1930s. ',
     'Action, Indie', ' Studio MDHR Entertainment Inc.',
