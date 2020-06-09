@@ -84,7 +84,7 @@ INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url
     'https://4.bp.blogspot.com/-E7rx1ZZ8k1A/VbIqP0OyPJI/AAAAAAAAA2A/L1n_vx48DzM/s1600/qW3aLM.png'
 );
 
-INSERT INTO GAMES (name,description,genre,developer,publiser,price,image_url) VALUES(
+INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url) VALUES(
     'Streets of Rage 4',
     'O clássico Streets of Rage, chamado de Luta sem Luvas (ベア・ナックル Bea Nakkuru) no Japão, é uma trilogia no gênero beat ‘em up que ficou famosa por sua jogabilidade atemporal e músicas eletrônicas dançantes. ',
     'Ação, Indie, Beat '' em Up, Aventura, Casual',
