@@ -21,9 +21,10 @@ public class GameRepository {
 	private static final String SELECT_ALL = "SELECT * FROM TB_GAMES";
 	private static final String SELECT = "SELECT * FROM TB_GAMES WHERE ID = ?";
 	private static final String SAVE = "INSERT INTO TB_GAMES (NAME, DESCRIPTION, GENRE, DEVELOPER, PUBLISHER, PRICE, IMAGE_URL)"
-			
+
 			+ "VALUES (?, ?, ?, ?, ?, ?, ?)";
 	private static final String UPDATE = "UPDATE TB_GAMES SET NAME = ?, DESCRIPTION = ?, GENRE = ?, DEVELOPER = ?, PUBLISHER = ?, PRICE = ?, IMAGE_URL = ? WHERE ID = ?";
+	private static final String DELETE = "DELETE FROM TB_GAMES WHERE ID = ?";
 
 	public GameRepository() {
 		/*
@@ -95,8 +96,8 @@ public class GameRepository {
 		 * "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. Four Pack also available!"
 		 * , "Action, Adventure, Indie, RPG", "ReLogic", "Relogic", 19.99,
 		 * "https://steamcdn-a.akamaihd.net/steam/apps/105600/header.jpg?t=1580862559"))
-		 * ;
-		GameRepository.lastId = games.size();*/
+		 * ; GameRepository.lastId = games.size();
+		 */
 	}
 
 	public Collection<GameModel> retrieveAllGames() {
@@ -119,10 +120,11 @@ public class GameRepository {
 
 	public void update(GameModel gameModel) {
 		jdbcTemplate.update(UPDATE, gameModel.getName(), gameModel.getDescription(), gameModel.getGenre(),
-				gameModel.getDeveloper(), gameModel.getPublisher(), gameModel.getPrice(), gameModel.getImageUrl(), gameModel.getId());
+				gameModel.getDeveloper(), gameModel.getPublisher(), gameModel.getPrice(), gameModel.getImageUrl(),
+				gameModel.getId());
 	}
 
 	public void delete(Integer id) {
-		games.remove(id);
+		jdbcTemplate.update(DELETE, id);
 	}
 }
