@@ -31,8 +31,8 @@ public class GameModel {
 	
 	@NotBlank(message = "O URL da imagem do jogo é obrigatório e não deve ser em branco.")
 	private String imageUrl;
-
 	
+	public GameModel() {}
 	public GameModel(Integer id, String name, String description, String genre, String developer, String publisher,
 			Double price, String imageUrl) {
 		super();
