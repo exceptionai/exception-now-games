@@ -92,7 +92,7 @@ INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url
     'https://s2.glbimg.com/SDX8vsoL7qfolI6iho72-y4ODzI=/0x0:1600x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/7/a/3TtZzlRgqADRLnhQxqKA/streets-of-rage-4.jpg'
 );
 
-INSERT INTO GAMES (name,description,genre,developer,publiser,price,image_url) VALUES(
+INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url) VALUES(
     'Euro Truck Simulator 2',
     'Travel across Europe as king of the road, a trucker who delivers important cargo across impressive distances! With dozens of cities to explore, your endurance, skill and speed will all be pushed to their limits. ',
     'Simulação, Direção, Realístico, Automobile Slim ',
