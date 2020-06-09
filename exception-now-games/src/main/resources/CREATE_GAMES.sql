@@ -100,7 +100,7 @@ INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url
     'https://steamcdn-a.akamaihd.net/steam/apps/227300/header.jpg?t=1587666184'
 );
 
-INSERT INTO GAMES (name,description,genre,developer,publiser,price,image_url) VALUES(
+INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url) VALUES(
     'Terraria',
     'Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. Four Pack also available!',
     'Action, Adventure, Indie, RPG', 'ReLogic', 'Relogic',19.99,
