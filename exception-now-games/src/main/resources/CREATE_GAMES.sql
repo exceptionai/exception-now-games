@@ -76,7 +76,7 @@ INSERT INTO GAMES (name,description,genre,developer,publiser,price,image_url) VA
     'https://i.pinimg.com/originals/01/a3/8f/01a38fb96317ff8658bc243fdeeac4d5.jpg'
 );
 
-INSERT INTO GAMES (name,description,genre,developer,publiser,price,image_url) VALUES(
+INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url) VALUES(
     'Dungeon Souls',
     'Cuphead is a classic run and gun action game heavily focused on boss battles and inspired by cartoons of the 1930s. ',
     'Action, Indie', ' Studio MDHR Entertainment Inc.',
