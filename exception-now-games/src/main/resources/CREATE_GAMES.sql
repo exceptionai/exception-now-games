@@ -106,3 +106,5 @@ INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url
     'Action, Adventure, Indie, RPG', 'ReLogic', 'Relogic',19.99,
     'https://steamcdn-a.akamaihd.net/steam/apps/105600/header.jpg?t=1580862559'
 );
+
+COMMIT 
