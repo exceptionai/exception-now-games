@@ -21,7 +21,7 @@ SELECT games_seq.NEXTVAL
 INTO :NEW.ID
 FROM DUAL;
 END;
-
+/
 
 INSERT INTO TB_GAMES (name,description,genre,developer,publisher,price,image_url) VALUES(
         'Cuphead',
